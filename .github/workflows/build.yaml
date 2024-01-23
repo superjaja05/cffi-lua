@@ -22,11 +22,8 @@ jobs:
       - name: Build and test cffi
         run: bash ./.ci/build-cffi-windows
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload dll file
+        uses: actions/upload-artifact@v4
         with:
           name: cffi-lua
-          path: build-5.4.2/cffi.dll.p
-      - uses: actions/upload-artifact@v4
-        with:
-          name: builds
-          path: build-5.4.2/
+          path: build-5.4.2/cffi.dll
