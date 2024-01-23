@@ -22,5 +22,11 @@ jobs:
       - name: Build and test cffi
         run: bash ./.ci/build-cffi-windows
 
-      - name: Print out all directories
-        run: tree
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cffi-lua
+          path: build-5.4.2/cffi.dll.p
+      - uses: actions/upload-artifact@v4
+        with:
+          name: builds
+          path: build-5.4.2/
